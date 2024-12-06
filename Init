@@ -1,0 +1,23 @@
+class Car:
+    total_cars = 0
+
+    def __init__(self, make, model, year, color):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.color = color
+        
+        self.speed = 0
+        Car.total_cars += 1
+    
+    def accelerate(self, speed_increase):
+        self.speed += speed_increase
+        print(f"{self.make} {self.model} is now going {self.speed} km/h")
+
+my_car = Car("Toyota", "Corolla", 2022, "Blue")
+
+print(f"My car is a {my_car.year} {my_car.make} {my_car.model}")
+
+my_car.accelerate(50)
+
+print(f"Total number of cars created: {Car.total_cars}")
